@@ -1,25 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import Login from "./Login";
+import Signup from "./Signup";
+import UserHome from "./UserHome";
+
+import "./App.css";
 
 function App() {
+  const [user, setUser] = useState(null);
+  const [loggedIn, setLoggedIn] = useState(false);
+
+  useEffect(() => {
+    fetch("/me").then((response) => {
+      if (response.ok) {
+        response.json().then((data) => setUser(data));
+        setLoggedIn(true);
+      }
+    });
+  }, []);
+  const logout = () => {
+    setUser(null);
+    setLoggedIn(false);
+  };
+  // const signup = (user) => {
+  //   setUser(user);
+  //   setLoggedIn(true);
+  // };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {user ? (
+        <UserHome user={user} logout={logout} />
+      ) : (
+        <div>
+          <Login setUser={setUser} />
+          <Signup setUser={setUser} />
+        </div>
+      )}
     </div>
   );
 }
-
 export default App;

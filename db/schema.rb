@@ -18,12 +18,12 @@ ActiveRecord::Schema.define(version: 2022_04_05_173410) do
   create_table "runs", force: :cascade do |t|
     t.date "date"
     t.float "distance"
-    t.time "total_time"
+    t.float "total_time"
     t.integer "calories"
     t.integer "elevation"
     t.integer "average_heartrate"
-    t.time "average_pace"
-    t.time "fastest_split"
+    t.float "average_pace"
+    t.float "fastest_split"
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
