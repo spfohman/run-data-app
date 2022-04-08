@@ -7,8 +7,12 @@ function FindData({ runs, sortRuns, sortBy, setSortBy }) {
   return (
     <div>
       <SearchBar sortBy={sortBy} setSortBy={setSortBy} />
-      <h1>Data will be searched here</h1>
-      {runList}
+      <h1>Run Data</h1>
+      <p>
+        All data types are sorted by the lowest number first, including distance
+        and total time.
+      </p>
+      <table>{runList}</table>
     </div>
   );
 }

@@ -19,9 +19,9 @@ function UserHome({ user, logout }) {
   useEffect(() => {
     const sorted = [...runs].sort((run1, run2) => {
       if (run1[sortBy] > run2[sortBy]) {
-        return -1;
-      } else if (run1[sortBy] < run2[sortBy]) {
         return 1;
+      } else if (run1[sortBy] < run2[sortBy]) {
+        return -1;
       }
       return 0;
     });
@@ -32,21 +32,26 @@ function UserHome({ user, logout }) {
     const updatedRuns = [...runs, newRun];
     setRuns(updatedRuns);
   }
+  const fastestMile = Math.min.apply(
+    Math,
 
+    runs.map((run) => {
+      return run.fastest_split;
+    })
+  );
+  console.log(fastestMile);
   return (
     <div>
       <NavBar logout={logout} />
-
+      <Route path="/Home">
+        <Home user={user} runs={runs} fastestMile={fastestMile} />
+      </Route>
       <Route path="/AddRun">
         <AddRun addRuns={addRuns} />
       </Route>
       <Route path="/FindData">
         <FindData runs={runs} sortBy={sortBy} setSortBy={setSortBy} />
       </Route>
-      <Route path="/Home">
-        <Home user={user} runs={runs} />
-      </Route>
-      {/* {eachRun} */}
     </div>
   );
 }
