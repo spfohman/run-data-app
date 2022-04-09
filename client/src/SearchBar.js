@@ -8,6 +8,7 @@ function SearchBar({ sortBy, setSortBy }) {
   return (
     <div>
       <strong>Sort by:</strong>
+      <br></br>
       <select onChange={(e) => setSortBy(e.target.value)}>
         <option value="distance">Distance</option>
         <option value="fastest_split">Fastest Split</option>

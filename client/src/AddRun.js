@@ -57,7 +57,7 @@ function AddRun({ addRuns }) {
           onChange={handleChange}
         ></input>
         <br />
-        <label htmlFor="distance">Run distance, enter format 0.00 : </label>
+        <label htmlFor="distance">Distance, enter format 0.00 : </label>
         <input
           type="float"
           name="distance"
@@ -66,7 +66,7 @@ function AddRun({ addRuns }) {
         ></input>
         <br />
         <label htmlFor="time">
-          Run length, enter total amount of minutes and seconds (ie. 80.05):{" "}
+          Total run time, enter amount of minutes and seconds (ie. 80.05):{" "}
         </label>
         <input
           type="float"
@@ -85,7 +85,7 @@ function AddRun({ addRuns }) {
         ></input>
         <br />
         <label htmlFor="average_heartrate">
-          Run average heart rate, enter in whole numbers:{" "}
+          Average heart rate, enter in whole numbers:{" "}
         </label>
         <input
           type="number"
@@ -96,7 +96,7 @@ function AddRun({ addRuns }) {
         ></input>
         <br />
         <label htmlFor="average_pace">
-          Run average pace, enter in format minutes.seconds:{" "}
+          Average pace, enter in format minutes.seconds:{" "}
         </label>
         <input
           type="float"
@@ -107,7 +107,7 @@ function AddRun({ addRuns }) {
         ></input>
         <br />
         <label htmlFor="fastest_split">
-          Run fastest split, enter in format minutes.seconds:{" "}
+          Fastest split, enter in format minutes.seconds:{" "}
         </label>
         <input
           type="float"

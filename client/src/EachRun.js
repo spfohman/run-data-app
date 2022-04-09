@@ -1,5 +1,6 @@
 import React from "react";
 import DeleteButton from "./DeleteButton";
+import moment from "moment";
 
 function EachRun({ run, handleDeleteRun, handleFavoriteRun }) {
   function favoriteRun() {
@@ -28,7 +29,7 @@ function EachRun({ run, handleDeleteRun, handleFavoriteRun }) {
         <th>Delete Run</th>
       </tr>
       <tr>
-        <td>{run.date}</td>
+        <td>{moment(run.date).format("DD/MM/YYYY")}</td>
         <td>{run.average_pace}</td>
         <td>{run.calories}</td>
         <td>{run.distance}</td>

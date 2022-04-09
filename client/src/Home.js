@@ -2,7 +2,7 @@ import React from "react";
 
 function Home({ user, fastestMile }) {
   return (
-    <div>
+    <div className="homePage">
       <h1>
         Hello {user.username.charAt(0).toUpperCase() + user.username.slice(1)}
       </h1>
