@@ -7,13 +7,6 @@ function DeleteButton({ handleDeleteRun, run }) {
       headers: { "Content-Type": "application/json" },
     });
     handleDeleteRun(run.id);
-    //   .then((response) => response.json())
-
-    //   .then((data) => {
-    //     console.log(data);
-    //     handleDeleteRun(data);
-    //   }
-    //   );
   }
   return <button onClick={deleteRun}>✖ </button>;
 }

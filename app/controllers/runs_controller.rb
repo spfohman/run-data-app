@@ -26,6 +26,16 @@ class RunsController < ApplicationController
         end
     end
 
+    def update 
+        run = user.runs.find_by(id: params[:id])
+        if run 
+            run.update(run_params)
+            render json: run, status: :accepted
+        else
+            render json: {error: "Not found"}, status: :not_found 
+        end 
+    end
+    
     def destroy  
         run = user.runs.find_by(id: params[:id])
         if run 
@@ -42,7 +52,7 @@ class RunsController < ApplicationController
     end
 
     def run_params 
-        params.permit(:date, :distance, :total_time, :calories, :elevation, :average_heartrate, :average_pace, :fastest_split, :user_id)
+        params.permit(:date, :distance, :total_time, :calories, :elevation, :average_heartrate, :average_pace, :fastest_split, :favorite, :user_id)
     end
 
 end

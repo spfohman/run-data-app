@@ -1,13 +1,19 @@
-import React, { useState } from "react";
+import React from "react";
 import DeleteButton from "./DeleteButton";
 
-function EachRun({ run, handleDeleteRun }) {
-  const [favorite, setFavorite] = useState(false);
-  const favoriteRun = favorite ? (
-    <p onClick={() => setFavorite(false)}>⭐ </p>
-  ) : (
-    <p onClick={() => setFavorite(true)}>🏃 </p>
-  );
+function EachRun({ run, handleDeleteRun, handleFavoriteRun }) {
+  function favoriteRun() {
+    fetch(`/runs/${run.id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ favorite: !run.favorite }),
+    })
+      .then((response) => response.json())
+      .then((updatedRun) => handleFavoriteRun(updatedRun));
+  }
+
   return (
     <tbody>
       <tr>
@@ -29,7 +35,7 @@ function EachRun({ run, handleDeleteRun }) {
         <td>{run.fastest_split}</td>
         <td>{run.total_time}</td>
         <td>{run.average_heartrate}</td>
-        <td>{favoriteRun} </td>
+        <td onClick={favoriteRun}>{run.favorite ? `⭐` : `🏃`} </td>
         <DeleteButton handleDeleteRun={handleDeleteRun} run={run} />
       </tr>
     </tbody>

@@ -46,7 +46,14 @@ function UserHome({ user, logout }) {
     setRuns(runToUpdate);
   }
   function handleFavoriteRun(favoriteRun) {
-    const runToUpdate = runs.map((run) => {});
+    const runToUpdate = runs.map((run) => {
+      if (run.id === favoriteRun.id) {
+        return favoriteRun;
+      } else {
+        return run;
+      }
+    });
+    setRuns(runToUpdate);
   }
 
   return (
@@ -64,6 +71,7 @@ function UserHome({ user, logout }) {
           sortBy={sortBy}
           setSortBy={setSortBy}
           handleDeleteRun={handleDeleteRun}
+          handleFavoriteRun={handleFavoriteRun}
         />
       </Route>
     </div>

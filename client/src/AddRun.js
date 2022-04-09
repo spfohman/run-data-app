@@ -119,6 +119,7 @@ function AddRun({ addRuns }) {
         <br />
         <button type="submit">Submit</button>
       </form>
+      <h5>To see a list of your run data click on the "Find Data" tab.</h5>
     </div>
   );
 }
