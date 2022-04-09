@@ -2,8 +2,10 @@ import React from "react";
 import SearchBar from "./SearchBar";
 import EachRun from "./EachRun";
 
-function FindData({ runs, sortRuns, sortBy, setSortBy }) {
-  const runList = runs.map((run) => <EachRun key={run.id} run={run} />);
+function FindData({ runs, sortRuns, sortBy, setSortBy, handleDeleteRun }) {
+  const runList = runs.map((run) => (
+    <EachRun key={run.id} run={run} handleDeleteRun={handleDeleteRun} />
+  ));
   return (
     <div>
       <SearchBar sortBy={sortBy} setSortBy={setSortBy} />

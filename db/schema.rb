@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2022_04_05_173410) do
     t.integer "average_heartrate"
     t.float "average_pace"
     t.float "fastest_split"
+    t.boolean "favorite"
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

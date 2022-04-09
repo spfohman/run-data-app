@@ -9,6 +9,7 @@ class CreateRuns < ActiveRecord::Migration[6.1]
       t.integer :average_heartrate
       t.float :average_pace, precision: 2
       t.float :fastest_split, precision: 2
+      t.boolean :favorite
       t.integer :user_id
 
       t.timestamps

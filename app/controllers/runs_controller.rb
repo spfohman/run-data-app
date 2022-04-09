@@ -29,7 +29,8 @@ class RunsController < ApplicationController
     def destroy  
         run = user.runs.find_by(id: params[:id])
         if run 
-            run.destroy 
+            run.destroy
+            render json: {success: "Run deleted"} 
         else
             render json: {error: "Run not found."}, status: :not_found 
         end

@@ -1,6 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
+import DeleteButton from "./DeleteButton";
 
-function EachRun({ run }) {
+function EachRun({ run, handleDeleteRun }) {
+  const [favorite, setFavorite] = useState(false);
+  const favoriteRun = favorite ? (
+    <p onClick={() => setFavorite(false)}>⭐ </p>
+  ) : (
+    <p onClick={() => setFavorite(true)}>🏃 </p>
+  );
   return (
     <tbody>
       <tr>
@@ -11,6 +18,8 @@ function EachRun({ run }) {
         <th>Fastest split</th>
         <th>total time</th>
         <th>Average heart rate</th>
+        <th>Favorite</th>
+        <th>Delete Run</th>
       </tr>
       <tr>
         <td>{run.date}</td>
@@ -20,6 +29,8 @@ function EachRun({ run }) {
         <td>{run.fastest_split}</td>
         <td>{run.total_time}</td>
         <td>{run.average_heartrate}</td>
+        <td>{favoriteRun} </td>
+        <DeleteButton handleDeleteRun={handleDeleteRun} run={run} />
       </tr>
     </tbody>
   );

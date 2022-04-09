@@ -9,7 +9,7 @@ function Home({ user, fastestMile }) {
       {fastestMile === Infinity ? (
         <h4>Enter run data to find your fastest mile.</h4>
       ) : (
-        <h4>Your fastest mile so far: {fastestMile}</h4>
+        <h4>Your fastest mile so far: {fastestMile} minutes.</h4>
       )}
       <div>
         <p>

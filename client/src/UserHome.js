@@ -35,11 +35,20 @@ function UserHome({ user, logout }) {
   const fastestMile = Math.min.apply(
     Math,
 
-    runs.map((run) => {
+    runs?.map((run) => {
       return run.fastest_split;
     })
   );
-  console.log(fastestMile);
+  function handleDeleteRun(deletedRun) {
+    const runToUpdate = runs.filter((run) => {
+      return run.id !== deletedRun;
+    });
+    setRuns(runToUpdate);
+  }
+  function handleFavoriteRun(favoriteRun) {
+    const runToUpdate = runs.map((run) => {});
+  }
+
   return (
     <div>
       <NavBar logout={logout} />
@@ -50,7 +59,12 @@ function UserHome({ user, logout }) {
         <AddRun addRuns={addRuns} />
       </Route>
       <Route path="/FindData">
-        <FindData runs={runs} sortBy={sortBy} setSortBy={setSortBy} />
+        <FindData
+          runs={runs}
+          sortBy={sortBy}
+          setSortBy={setSortBy}
+          handleDeleteRun={handleDeleteRun}
+        />
       </Route>
     </div>
   );
