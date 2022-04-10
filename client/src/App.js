@@ -21,10 +21,7 @@ function App() {
     setUser(null);
     setLoggedIn(false);
   };
-  // const signup = (user) => {
-  //   setUser(user);
-  //   setLoggedIn(true);
-  // };
+
   return (
     <div>
       {user ? (

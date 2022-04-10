@@ -40,6 +40,7 @@ function Signup({ setUser }) {
           placeholder="Username"
           onChange={(e) => setUsername(e.target.value)}
         />
+        <br></br>
         <input
           type="password"
           name="password"
@@ -47,6 +48,7 @@ function Signup({ setUser }) {
           placeholder="Password"
           onChange={(e) => setPassword(e.target.value)}
         />
+        <br></br>
         <input
           type="password"
           name="password"
@@ -54,6 +56,7 @@ function Signup({ setUser }) {
           placeholder="Password Confirmation"
           onChange={(e) => setPasswordConfirmation(e.target.value)}
         />
+        <br></br>
         <button type="submit">Sign Up</button>
       </form>
     </div>

@@ -3,8 +3,9 @@ th,
 td {
   border: 1px solid black;
   border-collapse: collapse;
-  background-color: aliceblue;
+  background-color: rgb(241, 241, 233);
   text-align: center;
+  margin: 5px;
 }
 
 .homePage {
@@ -16,7 +17,7 @@ td {
 
   padding: 10px;
   border-radius: 4px;
-  background-color: rgb(108, 226, 226);
+  background-color: rgb(176, 243, 243);
 }
 button {
   margin: 10px;
@@ -24,7 +25,7 @@ button {
 }
 body {
   margin: 20px;
-  background: linear-gradient(to bottom, #0099ff 0%, #99ffcc 100%);
+  background: linear-gradient(to bottom, #61c0ff 0%, #99ffcc 100%);
 
   background-size: cover;
   height: 100vh;
@@ -34,7 +35,7 @@ select {
   padding: 16px 20px;
   border: none;
   border-radius: 4px;
-  background-color: #f1f1f1;
+  background-color: rgb(241, 241, 233);
   font-weight: bold;
 }
 
