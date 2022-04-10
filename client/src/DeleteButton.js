@@ -8,6 +8,10 @@ function DeleteButton({ handleDeleteRun, run }) {
     });
     handleDeleteRun(run.id);
   }
-  return <button onClick={deleteRun}>✖ </button>;
+  return (
+    <button className="deleteRunButton" onClick={deleteRun}>
+      ✖{" "}
+    </button>
+  );
 }
 export default DeleteButton;

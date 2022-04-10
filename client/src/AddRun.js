@@ -45,77 +45,91 @@ function AddRun({ addRuns }) {
   }
   return (
     <div>
-      <h1>Form to add run data here</h1>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="date">Run date: </label>
-        <input
-          type="date"
-          name="date"
-          placeholder="date"
-          value={newRun.date}
-          required
-          onChange={handleChange}
-        ></input>
+      <h1>Add your run data here:</h1>
+      <form onSubmit={handleSubmit} className="addRunForm">
+        <p>
+          <label htmlFor="date">Run date: </label>
+          <input
+            type="date"
+            name="date"
+            placeholder="date"
+            value={newRun.date}
+            required
+            onChange={handleChange}
+          ></input>
+        </p>
         <br />
-        <label htmlFor="distance">Distance, enter format 0.00 : </label>
-        <input
-          type="float"
-          name="distance"
-          value={newRun.distance}
-          onChange={handleChange}
-        ></input>
+        <p>
+          <label htmlFor="distance">Distance, enter format 0.00 : </label>
+          <input
+            type="float"
+            name="distance"
+            value={newRun.distance}
+            onChange={handleChange}
+          ></input>
+        </p>
         <br />
-        <label htmlFor="time">
-          Total run time, enter amount of minutes and seconds (ie. 80.05):{" "}
-        </label>
-        <input
-          type="float"
-          name="total_time"
-          value={newRun.total_time}
-          onChange={handleChange}
-        ></input>
+        <p>
+          <label htmlFor="time">
+            Total run time, enter amount of minutes and seconds (ie. 80.05):{" "}
+          </label>
+          <input
+            type="float"
+            name="total_time"
+            value={newRun.total_time}
+            onChange={handleChange}
+          ></input>
+        </p>
         <br />
-        <label htmlFor="calories">Run calories burned: </label>
-        <input
-          type="number"
-          placeholder="Calories"
-          name="calories"
-          value={newRun.calories}
-          onChange={handleChange}
-        ></input>
+        <p>
+          <label htmlFor="calories">Run calories burned: </label>
+          <input
+            type="number"
+            placeholder="Calories"
+            name="calories"
+            value={newRun.calories}
+            onChange={handleChange}
+          ></input>
+        </p>
         <br />
-        <label htmlFor="average_heartrate">
-          Average heart rate, enter in whole numbers:{" "}
-        </label>
-        <input
-          type="number"
-          placeholder="Average Heartrate"
-          name="average_heartrate"
-          value={newRun.average_heartrate}
-          onChange={handleChange}
-        ></input>
+        <p>
+          <label htmlFor="average_heartrate">
+            Average heart rate, enter in whole numbers:{" "}
+          </label>
+          <input
+            type="number"
+            placeholder="Average Heartrate"
+            name="average_heartrate"
+            value={newRun.average_heartrate}
+            onChange={handleChange}
+          ></input>
+        </p>
         <br />
-        <label htmlFor="average_pace">
-          Average pace, enter in format minutes.seconds:{" "}
-        </label>
-        <input
-          type="float"
-          placeholder="Average Pace"
-          name="average_pace"
-          value={newRun.average_pace}
-          onChange={handleChange}
-        ></input>
+        <p>
+          <label htmlFor="average_pace">
+            Average pace, enter in format minutes.seconds:{" "}
+          </label>
+          <input
+            type="float"
+            placeholder="Average Pace"
+            name="average_pace"
+            value={newRun.average_pace}
+            onChange={handleChange}
+          ></input>
+        </p>
         <br />
-        <label htmlFor="fastest_split">
-          Fastest split, enter in format minutes.seconds:{" "}
-        </label>
-        <input
-          type="float"
-          placeholder="Fastest Split"
-          name="fastest_split"
-          value={newRun.fastest_split}
-          onChange={handleChange}
-        ></input>
+        <p>
+          <label htmlFor="fastest_split">
+            Fastest split, enter in format minutes.seconds:{" "}
+          </label>
+          <input
+            type="float"
+            placeholder="Fastest Split"
+            name="fastest_split"
+            value={newRun.fastest_split}
+            onChange={handleChange}
+          ></input>
+        </p>
         <br />
         <button type="submit">Submit</button>
       </form>

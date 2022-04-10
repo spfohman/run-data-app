@@ -3,24 +3,31 @@ th,
 td {
   border: 1px solid black;
   border-collapse: collapse;
+  background-color: aliceblue;
+  text-align: center;
 }
+
 .homePage {
   text-align: center;
   margin: 100px;
 }
 .navbar {
   text-align: center;
-  /* margin: 20px; */
+
   padding: 10px;
   border-radius: 4px;
   background-color: rgb(108, 226, 226);
 }
 button {
   margin: 10px;
+  font-weight: bold;
 }
 body {
   margin: 20px;
-  background-color: rgb(176, 250, 225);
+  background: linear-gradient(to bottom, #0099ff 0%, #99ffcc 100%);
+
+  background-size: cover;
+  height: 100vh;
 }
 select {
   width: 50%;
@@ -28,4 +35,34 @@ select {
   border: none;
   border-radius: 4px;
   background-color: #f1f1f1;
+  font-weight: bold;
+}
+
+.deleteRunButton {
+  border-radius: 50%;
+  text-align: center;
+}
+.deleteRunButton:hover {
+  background-color: red;
+}
+.homePage {
+  background-color: beige;
+  padding: 20px;
+}
+.addRunForm {
+  display: table;
+}
+input {
+  display: table-cell;
+  padding: 5px;
+  margin: 5px;
+  font-weight: bold;
+  border-radius: 5px;
+}
+label {
+  display: table-cell;
+  margin: 5px;
+}
+p {
+  display: table-row;
 }

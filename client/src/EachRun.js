@@ -29,14 +29,14 @@ function EachRun({ run, handleDeleteRun, handleFavoriteRun }) {
         <th>Delete Run</th>
       </tr>
       <tr>
-        <td>{moment(run.date).format("DD/MM/YYYY")}</td>
+        <td>{moment(run.date).format("MM/DD/YYYY")}</td>
         <td>{run.average_pace}</td>
         <td>{run.calories}</td>
         <td>{run.distance}</td>
         <td>{run.fastest_split}</td>
         <td>{run.total_time}</td>
         <td>{run.average_heartrate}</td>
-        <td onClick={favoriteRun}>{run.favorite ? `⭐` : `🏃`} </td>
+        <td onClick={favoriteRun}>{run.favorite ? `⭐` : "☆ "}</td>
         <DeleteButton handleDeleteRun={handleDeleteRun} run={run} />
       </tr>
     </tbody>
