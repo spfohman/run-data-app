@@ -1,10 +1,6 @@
 import React from "react";
 
-function SearchBar({ sortBy, setSortBy }) {
-  //   function handleSortChange(event) {
-  //     setSortBy(event.target.value);
-  //   }
-
+function SearchBar({ setSortBy }) {
   return (
     <div>
       <strong>Sort by:</strong>

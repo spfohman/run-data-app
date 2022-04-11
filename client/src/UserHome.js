@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import NavBar from "./NavBar";
 import AddRun from "./AddRun";
-// import EachRun from "./EachRun";
 import FindData from "./FindData";
 import Home from "./Home";
 import { Route } from "react-router-dom";

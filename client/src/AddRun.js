@@ -44,7 +44,7 @@ function AddRun({ addRuns }) {
     });
   }
   return (
-    <div>
+    <div className="runForm">
       <h1>Add your run data here:</h1>
       <form onSubmit={handleSubmit} className="addRunForm">
         <p>

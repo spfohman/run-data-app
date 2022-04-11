@@ -4,7 +4,7 @@ function Home({ user, fastestMile }) {
   return (
     <div className="homePage">
       <h1>
-        Hello {user.username.charAt(0).toUpperCase() + user.username.slice(1)}
+        Hello {user.username.charAt(0).toUpperCase() + user.username.slice(1)}!
       </h1>
       {fastestMile === Infinity ? (
         <h4>Enter run data to find your fastest mile.</h4>

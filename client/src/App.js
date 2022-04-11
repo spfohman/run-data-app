@@ -28,10 +28,10 @@ function App() {
         <UserHome user={user} logout={logout} />
       ) : (
         <div>
-          <h1>Run Data App</h1>
+          <h1>Run Data Tracker</h1>
           <h4>
-            Welcome! You can use this app to track your workout progress. Enter
-            data for each workout you do, then find your results!
+            Welcome! You can use this app to track your run progress. Enter data
+            for each workout you do, then find your results!
           </h4>
           <Login setUser={setUser} />
           <Signup setUser={setUser} />
