@@ -13,4 +13,6 @@ This app is created so a user may login and enter information from completed act
 
 ## Live example
 
+![](https://media.giphy.com/media/NdUDbVbCyTxlqvS7su/giphy.gif)
+
 The completed site can be viewed [here](https://gentle-beach-60454.herokuapp.com/)
