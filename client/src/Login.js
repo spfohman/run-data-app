@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function Login({ setUser }) {
+function Login({ setUser, errors }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -45,6 +45,13 @@ function Login({ setUser }) {
           onChange={(e) => setPassword(e.target.value)}
         />
         <br></br>
+        {errors.length > 0 && (
+          <ul style={{ color: "red" }}>
+            {errors.map((error) => (
+              <li key={error}>{error}</li>
+            ))}
+          </ul>
+        )}
         <button type="submit">Log In</button>
       </form>
     </div>
