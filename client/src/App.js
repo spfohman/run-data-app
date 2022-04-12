@@ -8,15 +8,12 @@ import "./App.css";
 function App() {
   const [user, setUser] = useState(null);
   const [loggedIn, setLoggedIn] = useState(false);
-  const [errors, setErrors] = useState([]);
 
   useEffect(() => {
     fetch("/me").then((response) => {
       if (response.ok) {
         response.json().then((data) => setUser(data));
         setLoggedIn(true);
-      } else {
-        response.json().then((errorData) => setErrors(errorData.errors));
       }
     });
   }, []);
@@ -36,8 +33,8 @@ function App() {
             Welcome! You can use this app to track your run progress. Enter data
             for each workout you do, then find your results!
           </h4>
-          <Login setUser={setUser} errors={errors} />
-          <Signup setUser={setUser} errors={errors} />
+          <Login setUser={setUser} />
+          <Signup setUser={setUser} />
         </div>
       )}
     </div>
