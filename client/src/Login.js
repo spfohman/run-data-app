@@ -17,10 +17,6 @@ function Login({ setUser, errors }) {
         response.json().then((user) => {
           setUser(user);
         });
-      } else {
-        response.json().then((errors) => {
-          console.log(errors);
-        });
       }
     });
   }
