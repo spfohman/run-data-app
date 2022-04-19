@@ -33,7 +33,7 @@ button:hover {
     0 17px 15px 0 rgba(0, 0, 0, 0.15);
 }
 body {
-  margin: 20px;
+  /* margin: 20px; */
   background: linear-gradient(to bottom, #61c0ff 0%, #99ffcc 100%);
 
   background-size: cover;
@@ -90,7 +90,8 @@ footer {
   position: absolute;
   bottom: 0;
   width: 100%;
-
+  margin-top: 10px;
+  padding-top: 10px;
   background-color: rgb(255, 204, 204);
   text-align: center;
 }

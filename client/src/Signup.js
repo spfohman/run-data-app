@@ -24,7 +24,7 @@ function Signup({ setUser }) {
         });
       } else {
         response.json().then((errors) => {
-          setSignupErrors(errors);
+          setSignupErrors(errors.errors);
         });
       }
     });
