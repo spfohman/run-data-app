@@ -37,13 +37,13 @@ function App() {
               Welcome! You can use this app to track your run progress. Enter
               data for each workout you do, then find your results!
             </h4>
-            <Login setUser={setUser} errors={errors} />
-            <Signup setUser={setUser} errors={errors} />
+            <Login setUser={setUser} />
+            <Signup setUser={setUser} />
           </div>
         )}
       </div>
+      <hr></hr>
       <footer>
-        <hr></hr>
         <h6>Questions about the app: </h6>
 
         <a

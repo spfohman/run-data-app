@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 
-function Signup({ setUser, errors }) {
+function Signup({ setUser }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
-
+  const [signupErrors, setSignupErrors] = useState([]);
   function handleSubmit(event) {
     event.preventDefault();
     fetch("/signup", {
@@ -24,7 +24,7 @@ function Signup({ setUser, errors }) {
         });
       } else {
         response.json().then((errors) => {
-          console.log(errors);
+          setSignupErrors(errors);
         });
       }
     });
@@ -57,9 +57,9 @@ function Signup({ setUser, errors }) {
           onChange={(e) => setPasswordConfirmation(e.target.value)}
         />
         <br></br>
-        {errors.length > 0 && (
+        {signupErrors.length > 0 && (
           <ul style={{ color: "red" }}>
-            {errors.map((error) => (
+            {signupErrors.map((error) => (
               <li key={error}>{error}</li>
             ))}
           </ul>

@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 
-function Login({ setUser, errors }) {
+function Login({ setUser }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [loginErrors, setLoginErrors] = useState([]);
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -17,6 +18,8 @@ function Login({ setUser, errors }) {
         response.json().then((user) => {
           setUser(user);
         });
+      } else {
+        response.json().then((errorData) => setLoginErrors(errorData.errors));
       }
     });
   }
@@ -41,9 +44,9 @@ function Login({ setUser, errors }) {
           onChange={(e) => setPassword(e.target.value)}
         />
         <br></br>
-        {errors.length > 0 && (
+        {loginErrors.length > 0 && (
           <ul style={{ color: "red" }}>
-            {errors.map((error) => (
+            {loginErrors.map((error) => (
               <li key={error}>{error}</li>
             ))}
           </ul>
