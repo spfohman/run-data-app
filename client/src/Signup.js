@@ -57,7 +57,13 @@ function Signup({ setUser, errors }) {
           onChange={(e) => setPasswordConfirmation(e.target.value)}
         />
         <br></br>
-
+        {errors.length > 0 && (
+          <ul style={{ color: "red" }}>
+            {errors.map((error) => (
+              <li key={error}>{error}</li>
+            ))}
+          </ul>
+        )}
         <button type="submit">Sign Up</button>
       </form>
     </div>
