@@ -23,7 +23,7 @@ function Login({ setUser }) {
       }
     });
   }
-
+  const errorPs = loginErrors.map((e) => <p className="errors">{e}</p>);
   return (
     <div>
       <form onSubmit={handleSubmit}>
@@ -44,13 +44,14 @@ function Login({ setUser }) {
           onChange={(e) => setPassword(e.target.value)}
         />
         <br></br>
-        {loginErrors.length > 0 && (
+        {/* {loginErrors.length > 0 && (
           <ul style={{ color: "red" }}>
             {loginErrors.map((error) => (
               <li key={error}>{error}</li>
             ))}
           </ul>
-        )}
+        )} */}
+        {errorPs}
         <button type="submit">Log In</button>
       </form>
     </div>

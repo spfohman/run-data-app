@@ -29,6 +29,7 @@ function Signup({ setUser }) {
       }
     });
   }
+  const errorPs = signupErrors.map((e) => <p className="errors">{e}</p>);
   return (
     <div>
       <form onSubmit={handleSubmit}>
@@ -57,13 +58,14 @@ function Signup({ setUser }) {
           onChange={(e) => setPasswordConfirmation(e.target.value)}
         />
         <br></br>
-        {signupErrors.length > 0 && (
+        {/* {signupErrors.length > 0 && (
           <ul style={{ color: "red" }}>
             {signupErrors.map((error) => (
               <li key={error}>{error}</li>
             ))}
           </ul>
-        )}
+        )} */}
+        {errorPs}
         <button type="submit">Sign Up</button>
       </form>
     </div>
