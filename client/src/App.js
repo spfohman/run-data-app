@@ -11,15 +11,14 @@ function App() {
   const [errors, setErrors] = useState([]);
 
   useEffect(() => {
-    fetch("/me")
-      .then((response) => response.json())
-      .then((data) => {
-        if (!data.errors) {
-          setUser(data);
-        } else {
-          setErrors(data.errors);
-        }
-      });
+    fetch("/me").then((response) => {
+      if (response.ok) {
+        response.json().then((data) => setUser(data));
+        setLoggedIn(true);
+      } else {
+        response.json().then((data) => setErrors(data.errors));
+      }
+    });
   }, []);
 
   const logout = () => {
