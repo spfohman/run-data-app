@@ -5,6 +5,7 @@ function Signup({ setUser }) {
   const [password, setPassword] = useState("");
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
   const [signupErrors, setSignupErrors] = useState([]);
+
   function handleSubmit(event) {
     event.preventDefault();
     fetch("/signup", {
@@ -17,17 +18,15 @@ function Signup({ setUser }) {
         password,
         password_confirmation: passwordConfirmation,
       }),
-    }).then((response) => {
-      if (response.ok) {
-        response.json().then((user) => {
-          setUser(user);
-        });
-      } else {
-        response.json().then((errors) => {
-          setSignupErrors(errors.errors);
-        });
-      }
-    });
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (!data.errors) {
+          setUser(data);
+        } else {
+          setSignupErrors(data.errors);
+        }
+      });
   }
   const errorPs = signupErrors.map((e) => <p className="errors">{e}</p>);
   return (

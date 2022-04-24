@@ -13,15 +13,15 @@ function Login({ setUser }) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ username, password }),
-    }).then((response) => {
-      if (response.ok) {
-        response.json().then((user) => {
-          setUser(user);
-        });
-      } else {
-        response.json().then((errorData) => setLoginErrors(errorData.errors));
-      }
-    });
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (!data.errors) {
+          setUser(data);
+        } else {
+          setLoginErrors(data.errors);
+        }
+      });
   }
   const errorPs = loginErrors.map((e) => <p className="errors">{e}</p>);
   return (
