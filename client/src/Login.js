@@ -19,6 +19,7 @@ function Login({ setUser }) {
         if (!data.errors) {
           setUser(data);
         } else {
+          console.log(data.errors);
           setLoginErrors(data.errors);
         }
       });
