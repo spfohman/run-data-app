@@ -25,6 +25,9 @@ function Signup({ setUser }) {
           setUser(data);
         } else {
           setSignupErrors(data.errors);
+          setUsername("");
+          setPassword("");
+          setPasswordConfirmation("");
         }
       });
   }
@@ -57,13 +60,7 @@ function Signup({ setUser }) {
           onChange={(e) => setPasswordConfirmation(e.target.value)}
         />
         <br></br>
-        {/* {signupErrors.length > 0 && (
-          <ul style={{ color: "red" }}>
-            {signupErrors.map((error) => (
-              <li key={error}>{error}</li>
-            ))}
-          </ul>
-        )} */}
+
         {errorPs}
         <button type="submit">Sign Up</button>
       </form>

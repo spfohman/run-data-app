@@ -16,11 +16,13 @@ function Login({ setUser }) {
     })
       .then((response) => response.json())
       .then((data) => {
-        if (!data.errors) {
+        if (!data.error) {
           setUser(data);
         } else {
-          console.log(data.errors);
-          setLoginErrors(data.errors);
+          console.log(data.error);
+          setLoginErrors(data.error);
+          setUsername("");
+          setPassword("");
         }
       });
   }
@@ -45,13 +47,7 @@ function Login({ setUser }) {
           onChange={(e) => setPassword(e.target.value)}
         />
         <br></br>
-        {/* {loginErrors.length > 0 && (
-          <ul style={{ color: "red" }}>
-            {loginErrors.map((error) => (
-              <li key={error}>{error}</li>
-            ))}
-          </ul>
-        )} */}
+
         {errorPs}
         <button type="submit">Log In</button>
       </form>
