@@ -1,4 +1,4 @@
-class RunsController < ApplicationController
+class Api::RunsController < ApplicationController
     def index 
         
         if user 
@@ -45,6 +45,15 @@ class RunsController < ApplicationController
             render json: {error: "Run not found."}, status: :not_found 
         end
     end
+    # def favoriteRuns 
+    #     runs = user.favoriteRuns 
+    #     if runs 
+    #         render json: runs 
+    #     else 
+    #       render json: {error: "Not found "}, status: :not_found 
+    #   end
+      
+    # end
 
     private 
     def user 
