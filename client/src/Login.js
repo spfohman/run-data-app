@@ -19,6 +19,7 @@ function Login({ setUser }) {
         if (!data.error) {
           setUser(data);
         } else {
+          console.log("is this working ");
           console.log(data.error);
           setLoginErrors(data.error);
           setUsername("");
