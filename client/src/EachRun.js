@@ -4,7 +4,7 @@ import moment from "moment";
 
 function EachRun({ run, handleDeleteRun, handleFavoriteRun }) {
   function favoriteRun() {
-    fetch(`/runs/${run.id}`, {
+    fetch(`/api/runs/${run.id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",

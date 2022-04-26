@@ -5,7 +5,7 @@ import { useHistory } from "react-router-dom";
 function NavBar({ logout }) {
   const history = useHistory();
   function handleLogout() {
-    fetch("/logout", {
+    fetch("/api/logout", {
       method: "DELETE",
     }).then(() => {
       logout();

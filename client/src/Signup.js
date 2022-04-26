@@ -7,8 +7,9 @@ function Signup({ setUser }) {
   const [signupErrors, setSignupErrors] = useState([]);
 
   function handleSubmit(event) {
+    console.log("SUBMIT");
     event.preventDefault();
-    fetch("/signup", {
+    fetch("/api/signup", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
