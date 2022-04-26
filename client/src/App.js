@@ -11,7 +11,7 @@ function App() {
   const [errors, setErrors] = useState([]);
 
   useEffect(() => {
-    fetch("/me").then((response) => {
+    fetch("/api/me").then((response) => {
       if (response.ok) {
         response.json().then((data) => setUser(data));
         setLoggedIn(true);
