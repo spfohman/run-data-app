@@ -4,7 +4,7 @@ class Api::RunsController < ApplicationController
         if user 
             render json: user.runs.all 
         else
-            render json: {error: "Not authorized"}, status: :unauthorized 
+            render json: {error: ["Not authorized"]}, status: :unauthorized 
         end
     end
     
@@ -45,15 +45,7 @@ class Api::RunsController < ApplicationController
             render json: {error: "Run not found."}, status: :not_found 
         end
     end
-    # def favoriteRuns 
-    #     runs = user.favoriteRuns 
-    #     if runs 
-    #         render json: runs 
-    #     else 
-    #       render json: {error: "Not found "}, status: :not_found 
-    #   end
-      
-    # end
+   
 
     private 
     def user 

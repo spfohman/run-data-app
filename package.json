@@ -11,6 +11,12 @@
     "heroku-postbuild": "npm run clean && npm run build && npm run deploy"
   },
   "dependencies": {
-    "moment": "^2.29.2"
+    "@fortawesome/fontawesome-svg-core": "^6.1.1",
+    "@fortawesome/free-regular-svg-icons": "^6.1.1",
+    "@fortawesome/free-solid-svg-icons": "^6.1.1",
+    "@fortawesome/react-fontawesome": "^0.1.18",
+    "babel-plugin-macros": "^3.1.0",
+    "moment": "^2.29.2",
+    "react-icons": "^4.3.1"
   }
 }

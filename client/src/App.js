@@ -33,8 +33,8 @@ function App() {
           <UserHome user={user} logout={logout} />
         ) : (
           <div>
-            <h1>Run Data Tracker</h1>
-            <h4>
+            <h1 className="landingPage">Run Data Tracker</h1>
+            <h4 className="landingPage">
               Welcome! You can use this app to track your run progress. Enter
               data for each workout you do, then find your results!
             </h4>

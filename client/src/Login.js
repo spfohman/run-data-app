@@ -19,15 +19,17 @@ function Login({ setUser }) {
         if (!data.error) {
           setUser(data);
         } else {
-          console.log("is this working ");
-          console.log(data.error);
           setLoginErrors(data.error);
           setUsername("");
           setPassword("");
         }
       });
   }
-  const errorPs = loginErrors.map((e) => <p className="errors">{e}</p>);
+  const errorPs = loginErrors.map((e) => (
+    <p key={e} className="errors">
+      {e}
+    </p>
+  ));
   return (
     <div>
       <form onSubmit={handleSubmit}>

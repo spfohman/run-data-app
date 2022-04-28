@@ -7,7 +7,6 @@ function Signup({ setUser }) {
   const [signupErrors, setSignupErrors] = useState([]);
 
   function handleSubmit(event) {
-    console.log("SUBMIT");
     event.preventDefault();
     fetch("/api/signup", {
       method: "POST",
@@ -22,17 +21,21 @@ function Signup({ setUser }) {
     })
       .then((response) => response.json())
       .then((data) => {
-        if (!data.errors) {
+        if (!data.error) {
           setUser(data);
         } else {
-          setSignupErrors(data.errors);
+          setSignupErrors(data.error);
           setUsername("");
           setPassword("");
           setPasswordConfirmation("");
         }
       });
   }
-  const errorPs = signupErrors.map((e) => <p className="errors">{e}</p>);
+  const errorPs = signupErrors.map((e) => (
+    <p key={e} className="errors">
+      {e}
+    </p>
+  ));
   return (
     <div>
       <form onSubmit={handleSubmit}>
