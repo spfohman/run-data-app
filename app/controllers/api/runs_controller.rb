@@ -1,4 +1,5 @@
 class Api::RunsController < ApplicationController
+    # skip_before_action :authorize, only: :fastestMile
     def index 
         
         if user 
@@ -45,7 +46,19 @@ class Api::RunsController < ApplicationController
             render json: {error: "Run not found."}, status: :not_found 
         end
     end
-   
+    def sortedRuns 
+        runs = Run.order(distance: :desc)
+        render json: runs, status: :ok 
+    end
+    def fastestMile
+        run = user.runs.minimum(:fastest_split)
+        if run 
+            
+            render json: run, status: :ok 
+        else 
+            render json: {error: ["Enter some run data to find your fastest mile so far."]}, status: :not_found 
+        end
+    end
 
     private 
     def user 
@@ -53,7 +66,7 @@ class Api::RunsController < ApplicationController
     end
 
     def run_params 
-        params.permit(:date, :distance, :total_time, :calories, :elevation, :average_heartrate, :average_pace, :fastest_split, :favorite, :user_id)
+        params.require(:run).permit(:date, :distance, :total_time, :calories, :elevation, :average_heartrate, :average_pace, :fastest_split, :favorite, :user_id)
     end
 
 end

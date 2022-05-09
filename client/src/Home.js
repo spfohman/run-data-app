@@ -1,15 +1,34 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
-function Home({ user, fastestMile }) {
+function Home({ user }) {
+  const [fastestMile, setFastestMile] = useState("");
+  const [mileError, setMileError] = useState([]);
+
+  useEffect(() => {
+    fetch("/api/fastestMile")
+      .then((response) => response.json())
+      .then((data) => {
+        if (!data.error) {
+          setFastestMile(data);
+        } else {
+          setMileError(data.error);
+        }
+      });
+  }, []);
+  const errorPs = mileError.map((e) => (
+    <p key={e} className="errors">
+      {e}
+    </p>
+  ));
   return (
     <div className="homePage">
       <h1>
         Hello {user.username.charAt(0).toUpperCase() + user.username.slice(1)}!
       </h1>
-      {fastestMile === Infinity ? (
-        <h4>Enter run data to find your fastest mile.</h4>
+      {fastestMile ? (
+        <b>Your fastest mile is: {fastestMile} minutes.</b>
       ) : (
-        <h4>Your fastest mile so far: {fastestMile} minutes.</h4>
+        errorPs
       )}
       <div>
         <p>

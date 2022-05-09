@@ -31,13 +31,7 @@ function UserHome({ user, logout }) {
     const updatedRuns = [...runs, newRun];
     setRuns(updatedRuns);
   }
-  const fastestMile = Math.min.apply(
-    Math,
 
-    runs?.map((run) => {
-      return run.fastest_split;
-    })
-  );
   function handleDeleteRun(deletedRun) {
     const runToUpdate = runs.filter((run) => {
       return run.id !== deletedRun;
@@ -59,7 +53,7 @@ function UserHome({ user, logout }) {
     <div>
       <NavBar logout={logout} />
       <Route path="/Home">
-        <Home user={user} runs={runs} fastestMile={fastestMile} />
+        <Home user={user} runs={runs} />
       </Route>
       <Route path="/AddRun">
         <AddRun addRuns={addRuns} />
