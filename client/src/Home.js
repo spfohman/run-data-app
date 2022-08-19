@@ -5,7 +5,7 @@ function Home({ user }) {
   const [mileError, setMileError] = useState([]);
 
   useEffect(() => {
-    fetch("/api/fastestMile")
+    fetch("/api/fastest-mile")
       .then((response) => response.json())
       .then((data) => {
         if (!data.error) {

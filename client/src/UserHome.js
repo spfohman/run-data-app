@@ -27,6 +27,7 @@ function UserHome({ user, logout }) {
 
     setRuns(sorted);
   }, [sortBy]);
+
   function addRuns(newRun) {
     const updatedRuns = [...runs, newRun];
     setRuns(updatedRuns);

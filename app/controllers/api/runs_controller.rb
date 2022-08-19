@@ -47,7 +47,7 @@ class Api::RunsController < ApplicationController
         end
     end
     
-    def fastestMile
+    def fastest_mile
         run = user.runs.minimum(:fastest_split)
         if run 
             
@@ -56,7 +56,15 @@ class Api::RunsController < ApplicationController
             render json: {error: ["Enter some run data to find your fastest mile so far."]}, status: :not_found 
         end
     end
-
+    def longest_run 
+        run = Run.longest_run 
+        render json: run 
+    end
+    def find_heartrate 
+        runs = Run.search(params[:average_heartrate])
+        user_runs = runs.where(user_id: user.id)
+        render json: user_runs 
+    end
     private 
     def user 
         User.find_by(id: session[:user_id])

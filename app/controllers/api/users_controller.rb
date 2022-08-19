@@ -22,7 +22,14 @@ class Api::UsersController < ApplicationController
             render json: {error: ["Not authorized"]}, status: :unauthorized 
         end
     end
-
+    def most_runs 
+        user = User.most_runs
+        render json: user
+    end
+    def most_runs_1 
+        user = User.count(:run)
+        render json: user
+    end
     private 
     def user_params 
         params.permit(:username, :password, :password_confirmation)
