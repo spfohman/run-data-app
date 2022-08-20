@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import Button from "@mui/material/Button";
+import TextField from "@mui/material/TextField";
 
 function AddRun({ addRuns }) {
   const [newRun, setNewRun] = useState({
@@ -46,92 +48,95 @@ function AddRun({ addRuns }) {
   return (
     <div className="runForm">
       <h1>Add your run data here:</h1>
-      <form onSubmit={handleSubmit} className="addRunForm">
-        <p>
+      <form onSubmit={handleSubmit}>
+        <fieldset>
           <label htmlFor="date">Run date: </label>
-          <input
+          <TextField
             type="date"
             name="date"
             placeholder="date"
             value={newRun.date}
             required
             onChange={handleChange}
-          ></input>
-        </p>
-        <br />
-        <p>
+          ></TextField>
+
+          <br />
+
           <label htmlFor="distance">Distance, enter format 0.00 : </label>
-          <input
+          <TextField
             type="float"
             name="distance"
             value={newRun.distance}
             onChange={handleChange}
-          ></input>
-        </p>
-        <br />
-        <p>
+          ></TextField>
+
+          <br />
+
           <label htmlFor="time">
             Total run time, enter amount of minutes and seconds (ie. 80.05):{" "}
           </label>
-          <input
+          <TextField
             type="float"
             name="total_time"
             value={newRun.total_time}
             onChange={handleChange}
-          ></input>
-        </p>
-        <br />
-        <p>
+          ></TextField>
+
+          <br />
+
           <label htmlFor="calories">Run calories burned: </label>
-          <input
+          <TextField
             type="number"
             placeholder="Calories"
             name="calories"
             value={newRun.calories}
             onChange={handleChange}
-          ></input>
-        </p>
-        <br />
-        <p>
+          ></TextField>
+
+          <br />
+
           <label htmlFor="average_heartrate">
             Average heart rate, enter in whole numbers:{" "}
           </label>
-          <input
+          <TextField
             type="number"
             placeholder="Average Heartrate"
             name="average_heartrate"
             value={newRun.average_heartrate}
             onChange={handleChange}
-          ></input>
-        </p>
-        <br />
-        <p>
+          ></TextField>
+
+          <br />
+
           <label htmlFor="average_pace">
             Average pace, enter in format minutes.seconds:{" "}
           </label>
-          <input
+          <TextField
             type="float"
             placeholder="Average Pace"
             name="average_pace"
             value={newRun.average_pace}
             onChange={handleChange}
-          ></input>
-        </p>
-        <br />
-        <p>
+          ></TextField>
+
+          <br />
+
           <label htmlFor="fastest_split">
             Fastest split, enter in format minutes.seconds:{" "}
           </label>
-          <input
+          <TextField
             type="float"
             placeholder="Fastest Split"
             name="fastest_split"
             value={newRun.fastest_split}
             onChange={handleChange}
-          ></input>
-        </p>
-        <br />
-        <button type="submit">Submit</button>
+          ></TextField>
+
+          <br />
+          <Button variant="outline" type="submit">
+            Submit
+          </Button>
+        </fieldset>
       </form>
       <h5>
         To see a list of your run data click on the "Find Data" tab above.

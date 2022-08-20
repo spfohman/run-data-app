@@ -1,6 +1,11 @@
 import React from "react";
 import DeleteButton from "./DeleteButton";
 import moment from "moment";
+import TableBody from "@mui/material/TableBody";
+import TableRow from "@mui/material/TableRow";
+import TableCell from "@mui/material/TableCell";
+import StarBorderIcon from "@mui/icons-material/StarBorder";
+import { yellow } from "@mui/material/colors";
 
 function EachRun({ run, handleDeleteRun, handleFavoriteRun }) {
   function favoriteRun() {
@@ -16,30 +21,29 @@ function EachRun({ run, handleDeleteRun, handleFavoriteRun }) {
   }
 
   return (
-    <tbody>
-      <tr>
-        <th>Date</th>
-        <th>Average Pace</th>
-        <th>Calories burned</th>
-        <th>Total distance</th>
-        <th>Fastest split</th>
-        <th>total time</th>
-        <th>Average heart rate</th>
-        <th>Favorite</th>
-        <th>Delete Run</th>
-      </tr>
-      <tr>
-        <td>{moment(run.date).format("MM/DD/YYYY")}</td>
-        <td>{run.average_pace}</td>
-        <td>{run.calories}</td>
-        <td>{run.distance}</td>
-        <td>{run.fastest_split}</td>
-        <td>{run.total_time}</td>
-        <td>{run.average_heartrate}</td>
-        <td onClick={favoriteRun}>{run.favorite ? `⭐` : "☆ "}</td>
-        <DeleteButton handleDeleteRun={handleDeleteRun} run={run} />
-      </tr>
-    </tbody>
+    <>
+      <TableBody>
+        <TableRow>
+          <TableCell>{moment(run.date).format("MM/DD/YYYY")}</TableCell>
+          <TableCell>{run.average_pace}</TableCell>
+          <TableCell>{run.calories}</TableCell>
+          <TableCell>{run.distance}</TableCell>
+          <TableCell>{run.fastest_split}</TableCell>
+          <TableCell>{run.total_time}</TableCell>
+          <TableCell>{run.average_heartrate}</TableCell>
+          <TableCell onClick={favoriteRun}>
+            {run.favorite ? (
+              <StarBorderIcon sx={{ color: yellow }} />
+            ) : (
+              <StarBorderIcon />
+            )}
+          </TableCell>
+          <TableCell>
+            <DeleteButton handleDeleteRun={handleDeleteRun} run={run} />
+          </TableCell>
+        </TableRow>
+      </TableBody>
+    </>
   );
 }
 export default EachRun;

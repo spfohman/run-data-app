@@ -1,8 +1,16 @@
 import React from "react";
+import Box from "@mui/material/Box";
 
 function SearchBar({ setSortBy }) {
   return (
-    <div>
+    <Box
+      display="flex"
+      width={500}
+      height={80}
+      alignItems="center"
+      justifyContent="center"
+      sx={{ minWidth: 120 }}
+    >
       <strong>Sort by:</strong>
       <br></br>
       <select onChange={(e) => setSortBy(e.target.value)}>
@@ -12,7 +20,7 @@ function SearchBar({ setSortBy }) {
         <option value="average_pace">Average Pace</option>
       </select>
       <br />
-    </div>
+    </Box>
   );
 }
 

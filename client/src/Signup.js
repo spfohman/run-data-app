@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import TextField from "@mui/material/TextField";
+import Button from "@mui/material/Button";
 
 function Signup({ setUser }) {
   const [username, setUsername] = useState("");
@@ -40,7 +42,7 @@ function Signup({ setUser }) {
     <div>
       <form onSubmit={handleSubmit}>
         <h3>Sign Up</h3>
-        <input
+        <TextField
           type="text"
           name="username"
           value={username}
@@ -48,7 +50,7 @@ function Signup({ setUser }) {
           onChange={(e) => setUsername(e.target.value)}
         />
         <br></br>
-        <input
+        <TextField
           type="password"
           name="password"
           value={password}
@@ -56,7 +58,7 @@ function Signup({ setUser }) {
           onChange={(e) => setPassword(e.target.value)}
         />
         <br></br>
-        <input
+        <TextField
           type="password"
           name="password"
           value={passwordConfirmation}
@@ -66,7 +68,7 @@ function Signup({ setUser }) {
         <br></br>
 
         {errorPs}
-        <button type="submit">Sign Up</button>
+        <Button type="submit">Sign Up</Button>
       </form>
     </div>
   );

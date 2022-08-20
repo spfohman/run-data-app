@@ -1,6 +1,8 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { useHistory } from "react-router-dom";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
 
 function NavBar({ logout }) {
   const history = useHistory();
@@ -15,17 +17,19 @@ function NavBar({ logout }) {
   return (
     <>
       <div className="navbar">
-        <button onClick={handleLogout}>Logout</button>
-
-        <NavLink to="/Home">
-          <button className="button">Home</button>
-        </NavLink>
-        <NavLink to="/AddRun">
-          <button className="button">Add A Run</button>
-        </NavLink>
-        <NavLink to="/FindData">
-          <button className="button">Find Data</button>
-        </NavLink>
+        <Box>
+          <NavLink className="navlink" to="/Home">
+            Home
+          </NavLink>
+          <NavLink className="navlink" to="/AddRun">
+            Add A Run
+          </NavLink>
+          <NavLink className="navlink" to="/FindData">
+            Find Data
+          </NavLink>
+          <br />
+          <Button onClick={handleLogout}>Logout</Button>
+        </Box>
       </div>
     </>
   );
