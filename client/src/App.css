@@ -36,10 +36,11 @@ button:hover {
 body {
   padding-bottom: 200px;
   clear: both;
-  padding-top: 10px;
+
   background-size: cover;
   height: 100vh;
   margin-bottom: 200px;
+  background-color: #6268c009;
 }
 
 .deleteRunButton {
@@ -64,9 +65,25 @@ footer {
   background-color: rgb(176, 243, 243);
   text-align: center;
 }
+.footerIcon {
+  color: black;
+}
+.footerIcon:hover {
+  color: rgba(25, 17, 133, 0.651);
+}
+.footerText {
+  line-height: 0em;
+  /* padding: 0px; */
+  margin: 5px;
+}
 fieldset {
   margin-left: 20px;
   margin-right: 20px;
+}
+.findDataPage {
+  margin-bottom: 200px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 .homePage {
   text-align: center;
@@ -82,7 +99,17 @@ hr {
   width: 50%;
   border: 1px solid black;
 }
-
+img {
+  float: right;
+  height: 500px;
+  border-radius: 10px;
+  margin-right: 200px;
+}
+.landingPage {
+  margin-bottom: 200px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
 .navlink {
   margin: 10px;
   text-decoration: none;
@@ -94,7 +121,7 @@ hr {
 .navbar {
   text-align: center;
   top: 0;
-
+  padding-top: 0px;
   background-color: rgb(176, 243, 243);
 }
 

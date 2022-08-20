@@ -48,6 +48,7 @@ function Signup({ setUser }) {
           value={username}
           placeholder="Username"
           onChange={(e) => setUsername(e.target.value)}
+          sx={{ margin: 1 }}
         />
         <br></br>
         <TextField
@@ -56,6 +57,7 @@ function Signup({ setUser }) {
           value={password}
           placeholder="Password"
           onChange={(e) => setPassword(e.target.value)}
+          sx={{ margin: 1 }}
         />
         <br></br>
         <TextField
@@ -64,11 +66,14 @@ function Signup({ setUser }) {
           value={passwordConfirmation}
           placeholder="Password Confirmation"
           onChange={(e) => setPasswordConfirmation(e.target.value)}
+          sx={{ margin: 1 }}
         />
         <br></br>
 
         {errorPs}
-        <Button type="submit">Sign Up</Button>
+        <Button sx={{ margin: 1 }} variant="outlined" type="submit">
+          Sign Up
+        </Button>
       </form>
     </div>
   );

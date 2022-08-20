@@ -133,7 +133,7 @@ function AddRun({ addRuns }) {
           ></TextField>
 
           <br />
-          <Button variant="outline" type="submit">
+          <Button variant="outlined" type="submit">
             Submit
           </Button>
         </fieldset>

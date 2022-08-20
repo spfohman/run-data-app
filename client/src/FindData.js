@@ -25,14 +25,14 @@ function FindData({
     />
   ));
   return (
-    <div>
+    <div className="findDataPage">
       <SearchBar sortBy={sortBy} setSortBy={setSortBy} />
       <h1>Run Data</h1>
       <p>
         All data types are sorted by the lowest number first, including distance
         and total time.
       </p>
-      <TableContainer component={Paper}>
+      <TableContainer sx={{ margin: 4 }} component={Paper}>
         <Table
           align="center"
           className="table"

@@ -54,12 +54,13 @@ function App() {
           {user ? (
             <UserHome user={user} logout={logout} />
           ) : (
-            <div>
-              <h1 className="landingPage">Run Data Tracker</h1>
-              <h4 className="landingPage">
+            <div className="landingPage">
+              <h1>Run Data Tracker</h1>
+              <h4>
                 Welcome! You can use this app to track your run progress. Enter
                 data for each workout you do, then find your results!
               </h4>
+              <img src="https://images.unsplash.com/photo-1533240332313-0db49b459ad6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzB8fHJ1bm5pbmd8ZW58MHwxfDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"></img>
               <Login setUser={setUser} />
               <Signup setUser={setUser} />
             </div>
@@ -67,7 +68,7 @@ function App() {
         </div>
         <hr></hr>
         <footer style={{ textAlign: "center" }}>
-          <p>
+          <p className="footerText">
             Questions about the app?
             <a
               className="bloglinks"
@@ -75,12 +76,12 @@ function App() {
               rel="noreferrer"
               href="mailto:pfohman.sarah@gmail.com"
             >
-              <MailOutlineIcon />
+              <MailOutlineIcon className="footerIcon" />
             </a>
           </p>
 
           <br />
-          <p>
+          <p className="footerText">
             Check out other projects:{" "}
             <a
               className="bloglinks"
@@ -88,12 +89,12 @@ function App() {
               rel="noreferrer"
               href="https://github.com/spfohman"
             >
-              <GitHubIcon />
+              <GitHubIcon className="footerIcon" />
             </a>
           </p>
 
           <br />
-          <p>
+          <p className="footerText">
             Connect:{" "}
             <a
               className="bloglinks"
@@ -101,7 +102,7 @@ function App() {
               rel="noreferrer"
               href="https://www.linkedin.com/in/sarah-pfohman-998a8246/"
             >
-              <LinkedIn />
+              <LinkedIn className="footerIcon" />
             </a>
           </p>
         </footer>

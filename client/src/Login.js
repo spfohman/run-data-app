@@ -42,6 +42,7 @@ function Login({ setUser }) {
           value={username}
           placeholder="Username"
           onChange={(e) => setUsername(e.target.value)}
+          sx={{ margin: 1 }}
         />
         <br></br>
         <TextField
@@ -50,11 +51,14 @@ function Login({ setUser }) {
           value={password}
           placeholder="Password"
           onChange={(e) => setPassword(e.target.value)}
+          sx={{ margin: 1 }}
         />
         <br></br>
 
         {errorPs}
-        <Button type="submit">Log In</Button>
+        <Button variant="outlined" type="submit" sx={{ margin: 1 }}>
+          Log In
+        </Button>
       </form>
     </div>
   );

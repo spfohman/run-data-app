@@ -32,11 +32,7 @@ function EachRun({ run, handleDeleteRun, handleFavoriteRun }) {
           <TableCell>{run.total_time}</TableCell>
           <TableCell>{run.average_heartrate}</TableCell>
           <TableCell onClick={favoriteRun}>
-            {run.favorite ? (
-              <StarBorderIcon sx={{ color: yellow }} />
-            ) : (
-              <StarBorderIcon />
-            )}
+            {run.favorite ? `⭐` : "☆ "}
           </TableCell>
           <TableCell>
             <DeleteButton handleDeleteRun={handleDeleteRun} run={run} />
