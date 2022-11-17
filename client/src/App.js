@@ -60,13 +60,18 @@ function App() {
                 Welcome! You can use this app to track your run progress. Enter
                 data for each workout you do, then find your results!
               </h4>
-              <img src="https://images.unsplash.com/photo-1533240332313-0db49b459ad6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzB8fHJ1bm5pbmd8ZW58MHwxfDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"></img>
+              <img
+                className="landingPhoto"
+                alt="photo of a runner"
+                src="https://images.unsplash.com/photo-1533240332313-0db49b459ad6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzB8fHJ1bm5pbmd8ZW58MHwxfDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+              ></img>
               <Login setUser={setUser} />
               <Signup setUser={setUser} />
             </div>
           )}
         </div>
         <hr></hr>
+
         <footer style={{ textAlign: "center" }}>
           <p className="footerText">
             Questions about the app?

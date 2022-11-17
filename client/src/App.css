@@ -99,11 +99,16 @@ hr {
   width: 50%;
   border: 1px solid black;
 }
-img {
+.landingPhoto {
   float: right;
   height: 500px;
   border-radius: 10px;
   margin-right: 200px;
+}
+.homeImage {
+  text-align: center;
+  height: 350px;
+  border-radius: 10px;
 }
 .landingPage {
   margin-bottom: 200px;

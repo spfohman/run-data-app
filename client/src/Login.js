@@ -21,6 +21,7 @@ function Login({ setUser }) {
         if (!data.error) {
           setUser(data);
         } else {
+          console.log(data);
           setLoginErrors(data.error);
           setUsername("");
           setPassword("");

@@ -35,6 +35,11 @@ function Home({ user }) {
           Welcome to the run-data-tracker app. You can enter the data you would
           like to keep track of, then sort based on what you would like to find.
         </p>
+        <img
+          className="homeImage"
+          alt="woman walking"
+          src="https://images.unsplash.com/photo-1477332552946-cfb384aeaf1c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8cnVubmluZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+        ></img>
       </div>
     </div>
   );
